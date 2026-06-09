@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HFC Kogi Media Admin</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    th {
+      background: #2563eb;
+      color: white;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+<h1>HFC Kogi Zone Media Dashboard</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Photo</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Department</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+
+  <tbody id="membersTable"></tbody>
+</table>
+
+<script type="module">
+import { createClient }
+from 'https://cdn.skypack.dev/@supabase/supabase-js';
+
+const supabase = createClient(
+  'YOUR_SUPABASE_URL',
+  'YOUR_SUPABASE_ANON_KEY'
+);
+
+async function loadMembers() {
+  const { data } = await supabase
+    .from('members')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  const table = document.getElementById('membersTable');
+
+  data.forEach(member => {
+    table.innerHTML += `
+      <tr>
+        <td>
+          <img src="${member.passport_url || ''}">
+        </td>
+        <td>${member.full_name}</td>
+        <td>${member.phone}</td>
+        <td>${member.email}</td>
+        <td>${member.department || ''}</td>
+        <td>${member.position || ''}</td>
+      </tr>
+    `;
+  });
+}
+
+loadMembers();
+</script>
+
+</body>
+</html>
