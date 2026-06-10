@@ -105,6 +105,11 @@
       gap: 15px;
     }
     
+    .header-right {
+      display: flex;
+      gap: 10px;
+    }
+    
     h1 {
       color: #1a365d;
       font-size: 24px;
@@ -135,6 +140,24 @@
     
     .logout-btn:hover {
       background: #dc2626;
+      transform: translateY(-1px);
+    }
+    
+    .export-btn {
+      padding: 10px 18px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+    
+    .export-btn:hover {
+      background: #1d4ed8;
       transform: translateY(-1px);
     }
     
@@ -228,7 +251,10 @@
           <h1>HFC Kogi Zone Media - Registrations</h1>
           <div class="count" id="count">Loading...</div>
         </div>
-        <button class="logout-btn" onclick="logout()">Logout</button>
+        <div class="header-right">
+          <button class="export-btn" onclick="exportCSV()">Export CSV</button>
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
       </div>
       
       <div class="table-wrapper">
@@ -242,6 +268,8 @@
   <script type="module">
     // CHANGE THIS PASSWORD
     const ADMIN_PASSWORD = "hfckogimedia";
+    
+    let allData = [];
     
     window.checkPassword = function() {
       const input = document.getElementById('passwordInput').value;
@@ -263,6 +291,7 @@
       document.getElementById('passwordInput').value = '';
       document.getElementById('errorMsg').style.display = 'none';
       document.getElementById('content').innerHTML = '<div class="loading">Loading registrations...</div>';
+      allData = [];
     }
     
     document.getElementById('passwordInput').addEventListener('keypress', function(e) {
@@ -286,6 +315,7 @@
         
         if (error) throw error;
         
+        allData = data || [];
         document.getElementById('count').textContent = `${count || 0} Registrations`;
         
         if (!data || data.length === 0) {
@@ -333,6 +363,39 @@
       } catch (err) {
         document.getElementById('content').innerHTML = `<div class="error">Error: ${err.message}</div>`;
       }
+    }
+    
+    window.exportCSV = function() {
+      if (allData.length === 0) {
+        alert("No data to export");
+        return;
+      }
+
+      const headers = ["Full Name", "Phone", "Email", "Gender", "Date of Birth", "Branch", "Position", "Skills", "Passport URL", "Date Registered"];
+      const rows = allData.map(row => [
+        row.full_name,
+        row.phone,
+        row.email,
+        row.gender,
+        row.date_of_birth,
+        row.church_branch,
+        row.position,
+        row.skills ? row.skills.join('; ') : '',
+        row.passport_url,
+        row.created_at
+      ]);
+
+      let csvContent = "data:text/csv;charset=utf-8," 
+        + headers.join(",") + "\n" 
+        + rows.map(e => e.map(v => `"${v || ''}"`).join(",")).join("\n");
+
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", `hfc_members_${new Date().toISOString().split('T')[0]}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   </script>
 </body>
