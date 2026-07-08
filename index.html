@@ -34,180 +34,30 @@
       to { opacity: 1; transform: translateY(0); }
     }
     
-    .header {
-      text-align: center;
-      margin-bottom: 35px;
-    }
-    
-    .logo {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 15px;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-    }
-    
-    .logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    h1 { 
-      color: #1a365d; 
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    
-    h2 {
-      color: #64748b;
-      font-size: 16px;
-      font-weight: 500;
-    }
-    
-    .form-group { 
-      margin-bottom: 22px; 
-    }
-    
-    label { 
-      display: block; 
-      margin-bottom: 8px; 
-      font-weight: 600; 
-      color: #334155; 
-      font-size: 14px;
-    }
-    
-    input, select, textarea { 
-      width: 100%; 
-      padding: 14px 16px; 
-      border: 2px solid #e2e8f0; 
-      border-radius: 12px; 
-      font-size: 15px;
-      font-family: 'Inter', sans-serif;
-      transition: all 0.2s;
-      background: #f8fafc;
-    }
-    
-    input:focus, select:focus, textarea:focus { 
-      outline: none; 
-      border-color: #667eea; 
-      background: #fff;
-      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
-    }
-    
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-    
-    button { 
-      width: 100%; 
-      padding: 16px; 
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-      color: #fff; 
-      border: none; 
-      border-radius: 12px; 
-      font-size: 16px; 
-      font-weight: 600; 
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-      font-family: 'Inter', sans-serif;
-    }
-    
-    button:hover:not(:disabled) {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-    }
-    
-    button:active:not(:disabled) {
-      transform: translateY(0);
-    }
-    
-    button:disabled { 
-      background: #cbd5e1; 
-      cursor: not-allowed;
-      transform: none;
-      box-shadow: none;
-    }
-    
-    .skills { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
-      gap: 12px; 
-    }
-    
-    .skills label { 
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      padding: 12px;
-      background: #f8fafc;
-      border-radius: 10px;
-      border: 2px solid #e2e8f0;
-      cursor: pointer;
-      transition: all 0.2s;
-      margin-bottom: 0;
-    }
-    
-    .skills label:hover {
-      border-color: #667eea;
-      background: #fff;
-    }
-    
-    .skills input[type="checkbox"] {
-      width: auto;
-      margin-right: 10px;
-      accent-color: #667eea;
-    }
-    
-    .success { 
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: #fff; 
-      padding: 16px; 
-      border-radius: 12px; 
-      text-align: center; 
-      display: none;
-      font-weight: 600;
-      animation: fadeIn 0.3s;
-    }
-    
-    .error { 
-      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-      color: #fff; 
-      padding: 16px; 
-      border-radius: 12px; 
-      text-align: center; 
-      display: none; 
-      margin-bottom: 20px;
-      font-weight: 600;
-      animation: fadeIn 0.3s;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    .file-input {
-      padding: 12px;
-      background: #f8fafc;
-      cursor: pointer;
-    }
-    
-    .divider {
-      height: 1px;
-      background: #e2e8f0;
-      margin: 25px 0;
-    }
-    
-    @media (max-width: 600px) {
-      body { padding: 15px; }
-      .container { padding: 25px 20px; }
-      h1 { font-size: 24px; }
-      .skills { grid-template-columns: 1fr; }
-    }
+    .header { text-align: center; margin-bottom: 35px; }
+    .logo { width: 80px; height: 80px; margin: 0 auto 15px; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3); }
+    .logo img { width: 100%; height: 100%; object-fit: cover; }
+    h1 { color: #1a365d; font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+    h2 { color: #64748b; font-size: 16px; font-weight: 500; }
+    .form-group { margin-bottom: 22px; }
+    label { display: block; margin-bottom: 8px; font-weight: 600; color: #334155; font-size: 14px; }
+    input, select, textarea { width: 100%; padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 15px; font-family: 'Inter', sans-serif; transition: all 0.2s; background: #f8fafc; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: #667eea; background: #fff; box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1); }
+    textarea { resize: vertical; min-height: 80px; }
+    button { width: 100%; padding: 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; font-family: 'Inter', sans-serif; }
+    button:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4); }
+    button:active:not(:disabled) { transform: translateY(0); }
+    button:disabled { background: #cbd5e1; cursor: not-allowed; transform: none; box-shadow: none; }
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+    .skills label { font-weight: 500; display: flex; align-items: center; padding: 12px; background: #f8fafc; border-radius: 10px; border: 2px solid #e2e8f0; cursor: pointer; transition: all 0.2s; margin-bottom: 0; }
+    .skills label:hover { border-color: #667eea; background: #fff; }
+    .skills input[type="checkbox"] { width: auto; margin-right: 10px; accent-color: #667eea; }
+    .success { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #fff; padding: 16px; border-radius: 12px; text-align: center; display: none; font-weight: 600; animation: fadeIn 0.3s; }
+    .error { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: #fff; padding: 16px; border-radius: 12px; text-align: center; display: none; margin-bottom: 20px; font-weight: 600; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .file-input { padding: 12px; background: #f8fafc; cursor: pointer; }
+    .divider { height: 1px; background: #e2e8f0; margin: 25px 0; }
+    @media (max-width: 600px) { body { padding: 15px; } .container { padding: 25px 20px; } h1 { font-size: 24px; } .skills { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -283,13 +133,13 @@
       <div class="form-group">
         <label>Skills</label>
         <div class="skills">
-          <label><input type="checkbox" value="Photography"> 📷 Photography</label>
-          <label><input type="checkbox" value="Videography"> 🎥 Videography</label>
-          <label><input type="checkbox" value="Graphics Design"> 🎨 Graphics Design</label>
-          <label><input type="checkbox" value="Social Media"> 📱 Social Media</label>
-          <label><input type="checkbox" value="Content Creating"> ✍️ Content Creating</label>
-          <label><input type="checkbox" value="Livestreaming"> 🔴 Livestreaming</label>
-          <label><input type="checkbox" value="Sound Engineering"> 🎵 Sound Engineering</label>
+          <label><input type="checkbox" name="skills" value="Photography"> 📷 Photography</label>
+          <label><input type="checkbox" name="skills" value="Videography"> 🎥 Videography</label>
+          <label><input type="checkbox" name="skills" value="Graphics Design"> 🎨 Graphics Design</label>
+          <label><input type="checkbox" name="skills" value="Social Media"> 📱 Social Media</label>
+          <label><input type="checkbox" name="skills" value="Content Creating"> ✍️ Content Creating</label>
+          <label><input type="checkbox" name="skills" value="Livestreaming"> 🔴 Livestreaming</label>
+          <label><input type="checkbox" name="skills" value="Sound Engineering"> 🎵 Sound Engineering</label>
         </div>
       </div>
       
@@ -314,30 +164,46 @@
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRtbXB3cmJtd2pwcG1za2dkcnVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMzEwNjEsImV4cCI6MjA5NjYwNzA2MX0.DmRrusdBCtCKt5EqjqYYxunZg0udycIlN-PSK8xTPUI';
     const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
     
+    function showError(message) {
+      const errorMsg = document.getElementById('errorMsg');
+      errorMsg.textContent = message;
+      errorMsg.style.display = 'block';
+      setTimeout(() => errorMsg.style.display = 'none', 6000);
+    }
+    
     document.getElementById('regForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = document.getElementById('submitBtn');
-      const errorMsg = document.getElementById('errorMsg');
+      const errorMsg = document.getElementById('errorMsg'); // Added this
       btn.disabled = true;
       btn.textContent = 'Submitting...';
-      errorMsg.style.display = 'none';
+      errorMsg.style.display = 'none'; // Changed from getElementById
       
       const formData = new FormData(e.target);
       let passportUrl = null;
       
       try {
+        // Check internet first
+        if (!navigator.onLine) throw new Error('No internet connection. Please check your network and try again.');
+        
+        // Handle file upload
         const file = formData.get('passport');
         if (file && file.size > 0) {
           const fileExt = file.name.split('.').pop();
-          const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
-          const { data, error } = await supabase.storage.from('passports').upload(fileName, file);
-          if (error) throw error;
-          passportUrl = supabase.storage.from('passports').getPublicUrl(fileName).data.publicUrl;
+          const fileName = `passport_${Date.now()}_${Math.random().toString(36).substring(2)}.${fileExt}`;
+          const { data, error: uploadError } = await supabase.storage.from('passports').upload(fileName, file, { upsert: false });
+          if (uploadError) {
+            console.warn('File upload failed:', uploadError.message);
+            showError('⚠️ Photo upload failed, but we will still save your registration.');
+          } else {
+            passportUrl = supabase.storage.from('passports').getPublicUrl(fileName).data.publicUrl;
+          }
         }
         
-        const skills = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+        const skills = Array.from(document.querySelectorAll('input[name="skills"]:checked')).map(cb => cb.value);
         
-        const { error } = await supabase.from('members').insert([{
+        // Insert to database
+        const { error: dbError } = await supabase.from('members').insert([{
           full_name: formData.get('full_name'),
           phone: formData.get('phone'),
           email: formData.get('email'),
@@ -353,21 +219,20 @@
           passport_url: passportUrl
         }]);
         
-        if (error) throw error;
+        if (dbError) throw dbError;
         
         document.getElementById('successMsg').style.display = 'block';
         e.target.reset();
-        setTimeout(() => {
-          document.getElementById('successMsg').style.display = 'none';
-        }, 5000);
+        setTimeout(() => document.getElementById('successMsg').style.display = 'none', 5000);
         
       } catch (err) {
-        errorMsg.textContent = 'Error: ' + err.message;
+        console.error(err);
+        errorMsg.textContent = err.message || JSON.stringify(err);
         errorMsg.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Submit Registration';
       }
-      
-      btn.disabled = false;
-      btn.textContent = 'Submit Registration';
     });
   </script>
 </body>
